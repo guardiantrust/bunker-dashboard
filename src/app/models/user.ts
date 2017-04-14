@@ -11,3 +11,11 @@ export class User {
   Created: string;
   CompanyID: string;
 }
+
+export class LoginUser {
+  companyID: string;
+  userID: string;
+  exp: number;
+  iat: number;
+  token: string;
+}
