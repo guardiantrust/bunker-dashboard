@@ -5,17 +5,20 @@ import { Router, NavigationStart } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { Company } from '../models/company'
-import myGlobals = require('globals');
+import { Company } from '../models/company';
+import { AppSettings, AuthenticationHeader} from '../../../global';
 
 @Injectable()
 export class CompanyService {
-    constructor(private http: Http) { }
-    private url = myGlobals.url + "companies";
+  private url = AppSettings.API_ENDPOINT + '/companies';
+  private serviceHeaders = AuthenticationHeader.forUser();
 
-    getCompany(id: string) {
-        return this.http.get(this.url + "/" + id, {headers: myGlobals.headers })
-        .map(response => response.json().data as Company);
+  constructor(private http: Http) { }
 
-    }
+  getCompany() {
+    return this.http.get(this.url
+      , { headers: this.serviceHeaders })
+      .map(response => response.json().data as Company);
+
+  }
 }

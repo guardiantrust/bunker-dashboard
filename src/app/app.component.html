@@ -1,12 +1,9 @@
 <h1>
-  {{title}}
+    {{title}}
 </h1>
 <h2>{{motto}}</h2>
 
 <nav>
-  <a routerLink="/machines" routerLinkActive="active">Machines</a>
-  <a routerLink="/batches" routerLinkActive="active">Batches</a>
-  <a routerLink="/parts" routerLinkActive="active">Parts</a>
-  <a routerLink="/files" routerLinkActive="active">Manage Files</a>
-  <a routerLink="/companyprofile" routerLinkActive="active">Company Profile</a>
+    <a routerLink='/companyprofile' routerLinkActive="active">Company Profile</a>
 </nav>
+<router-outlet></router-outlet>
