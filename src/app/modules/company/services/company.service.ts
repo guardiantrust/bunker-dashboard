@@ -22,4 +22,11 @@ export class CompanyService {
       , { headers: this.serviceHeaders })
       .map(response => response.json());
   }
+
+  getCompany(id: string) {
+    const compiledURL = this.url  + id;
+    return this.http.get(compiledURL  ,  { headers: this.serviceHeaders })
+    .map(response => response.json());
+
+  }
 }

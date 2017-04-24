@@ -6,25 +6,21 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-root',
-  templateUrl: '../list/company-list.component.html'
+  templateUrl: '../profile/company-profile.component.html'
 })
 
-export class CompanyComponent implements OnInit {
-  title = 'Welcome to the Bunker!';
-  motto = 'Plug-in. Plan. Produce.';
-  companies: Observable<Company[]>;
+export class CompanyProfileComponent implements OnInit {
+
+  company = new Company();
 
   constructor( private _companyService: CompanyService  ) {}
 
   ngOnInit() {
-    this._companyService.getCompanies()
+    this._companyService.getCompany()
     .subscribe(
-      companies => {this.companies = companies; },
+      company => {this.company = company; },
       error => { console.log(error); });
 
   };
 
-  profile(companyID: string) {
-
-  }
 }
