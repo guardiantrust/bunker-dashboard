@@ -7,13 +7,13 @@ import { AppRoutingModule } from '../app/app-routing.module';
 import { CompanyService } from '../app/modules/company/services/company.service';
 
 import { AppComponent } from './app.component';
-import { CompanyComponent } from '../app/modules/company/list/company-list.component';
+import { CompanyListComponent } from '../app/modules/company/list/company-list.component';
 import { CompanyProfileComponent } from '../app/modules/company/profile/company-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompanyComponent,
+    CompanyListComponent,
     CompanyProfileComponent
   ],
   imports: [

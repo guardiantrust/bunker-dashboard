@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: '../list/company-list.component.html'
 })
 
-export class CompanyComponent implements OnInit {
+export class CompanyListComponent implements OnInit {
   title = 'Welcome to the Bunker!';
   motto = 'Plug-in. Plan. Produce.';
   companies: Observable<Company[]>;
